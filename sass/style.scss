@@ -21,16 +21,16 @@ $blue-pinkGradient: linear-gradient(
   box-sizing: border-box;
 }
 body {
+  max-width: 1400px;
+  margin: 0 auto;
   background: $bodyColor;
 }
-.wrapper {
-  width: 80%;
-  margin: 2rem auto;
-}
+
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 1rem 0;
+  width: 80%;
+  margin: 1rem auto;
 
   &__title {
     color: $grayDark;
@@ -47,7 +47,10 @@ body {
   }
 }
 .main {
+  overflow: hidden;
   &__text {
+    width: 80%;
+    margin: 0 auto;
     &--bold {
       margin: 2rem 0 1rem 0;
       color: $grayDark;
@@ -69,16 +72,22 @@ body {
     }
   }
   &__image {
-    width: 80vw;
-    height: 80vw;
-    background-image: url("/assets/image-hero-mobile.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    .image {
+      display: block;
+      margin: 0 auto;
+    }
+    #imageTablet {
+      display: none;
+    }
+    #imageDesktop {
+      display: none;
+    }
   }
 }
 
 .courses {
+  width: 80%;
+  margin: 0 auto;
   &__container {
     &__check {
       padding: 2rem;
@@ -126,7 +135,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 7rem;
-  width: 100vw;
+  width: 100%;
   padding: 2rem;
   background-color: $grayDark;
   &__title {
@@ -139,5 +148,73 @@ body {
     background: $blue-pinkGradient;
     border: none;
     border-radius: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    &__text {
+      margin: 10rem 0 0 2rem;
+    }
+    &__image {
+      width: 50%;
+      transform: translateY(-15%);
+
+      #imageTablet {
+        display: inline-block;
+      }
+      #image {
+        display: none;
+      }
+    }
+  }
+  .courses {
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 0px;
+    }
+  }
+}
+@media (min-width: 868px) {
+  .main {
+    &__image {
+      transform: translate(12%, -15%);
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .main {
+    &__image {
+      width: 45vw;
+      transform: translate(-15%, -25%);
+
+      #imageTablet {
+        display: none;
+      }
+      #imageDesktop {
+        display: inline-block;
+      }
+    }
+  }
+}
+@media (min-width: 1600px) {
+  .main {
+    &__image {
+      width: 45vw;
+      transform: translate(0%, -25%);
+
+      #imageTablet {
+        display: none;
+      }
+      #imageDesktop {
+        display: inline-block;
+      }
+    }
   }
 }

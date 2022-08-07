@@ -20,13 +20,10 @@
     <title>Frontend Mentor | Skilled e-learning landing page</title>
   </head>
   <body>
-    <div class="wrapper">
       <header class="header">
         <h1 class="header__title">skilled</h1>
         <button class="header__button">Get Stared</button>
       </header>
-    </div>
-    <div class="wrapper">
       <main class="main">
         <div class="main__text">
           <p class="main__text--bold">Maximize skill, minimize budget</p>
@@ -36,10 +33,27 @@
           </p>
           <button class="main__text--button">Get Started</button>
         </div>
-        <div class="main__image"></div>
+        <div class="main__image">
+          <img
+          class="image"
+          id="image"
+          src="./assets/image-hero-mobile.png"
+          alt=""
+          />
+          <img
+          class="image"
+          id="imageTablet"
+          src="./assets/image-hero-tablet.png"
+          alt=""
+          />
+          <img
+          class="image"
+          id="imageDesktop"
+          src="./assets/image-hero-desktop.png"
+          alt=""
+          />
+        </div>
       </main>
-    </div>
-    <div class="wrapper">
       <section class="courses">
         <div class="courses__container">
           <div class="courses__container__check">
@@ -92,12 +106,12 @@
             </p>
             <span class="courses__container__box--getStarted">Get Stared</span>
           </div>
-        </div>
       </section>
     </div>
     <footer class="footer">
       <h2 class="footer__title">skilled</h2>
       <button class="footer__button">Get started</button>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
